@@ -7,6 +7,7 @@ use CodeIgniter\Validation\StrictRules\CreditCardRules;
 use CodeIgniter\Validation\StrictRules\FileRules;
 use CodeIgniter\Validation\StrictRules\FormatRules;
 use CodeIgniter\Validation\StrictRules\Rules;
+use App\Validation\Userrules;
 
 class Validation extends BaseConfig
 {
@@ -21,6 +22,7 @@ class Validation extends BaseConfig
      * @var string[]
      */
     public array $ruleSets = [
+        Userrules::class,
         Rules::class,
         FormatRules::class,
         FileRules::class,

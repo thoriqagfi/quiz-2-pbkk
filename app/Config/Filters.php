@@ -7,6 +7,8 @@ use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
 use CodeIgniter\Filters\Honeypot;
 use CodeIgniter\Filters\InvalidChars;
+use App\Filters\Noauth;
+use App\Filters\Auth;
 use CodeIgniter\Filters\SecureHeaders;
 
 class Filters extends BaseConfig
@@ -20,6 +22,8 @@ class Filters extends BaseConfig
      * @phpstan-var array<string, class-string|list<class-string>>
      */
     public array $aliases = [
+        "auth"          => Auth::class,
+        "noauth"        => Noauth::class,
         'csrf'          => CSRF::class,
         'toolbar'       => DebugToolbar::class,
         'honeypot'      => Honeypot::class,

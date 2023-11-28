@@ -9,12 +9,6 @@ class TransactionModel extends Model
   protected $table = 'transaction';
   protected $primaryKey = 'id';
   protected $allowedFields = ['user_id', 'movie_cinema_id', 'method', 'email', 'cardholder', 'card_number', 'date', 'cvv', 'status', 'seat', 'amount'];
-  protected $returnType = 'App\Entities\Transaction';
-  protected $useTimestamps = true;
-  protected $useSoftDeletes = true;
-  protected $createdField = 'created_at';
-  protected $updatedField = 'updated_at';
-  protected $deletedField = 'deleted_at';
 
   public function getTransaction($id = false)
   {

@@ -8,13 +8,7 @@ class Ticket extends Model
 {
   protected $table = 'ticket';
   protected $primaryKey = 'id';
-  protected $allowedFields = ['user_id', 'movie_cinema_id' ,'seat', 'price'];
-  protected $returnType = 'App\Entities\Ticket';
-  protected $useTimestamps = true;
-  protected $useSoftDeletes = true;
-  protected $createdField = 'created_at';
-  protected $updatedField = 'updated_at';
-  protected $deletedField = 'deleted_at';
+  protected $allowedFields = ['user_id', 'movie_cinema_movie_id', 'movie_cinema_cinema_id', 'seat', 'price'];
 
   public function getTicket($id = false)
   {

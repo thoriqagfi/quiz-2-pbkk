@@ -55,14 +55,7 @@ class UserController extends BaseController
           'required' => '{field} user harus diisi.'
         ]
       ],
-      'role' => [
-        'rules' => 'required',
-        'errors' => [
-          'required' => '{field} user harus diisi.'
-        ]
-      ]
-    ]))
-    {
+    ])) {
       return redirect()->to('/register')->withInput();
     }
     $this->userModel->save([
@@ -100,7 +93,8 @@ class UserController extends BaseController
           'role' => $data['role'],
           'logged_in'     => TRUE
         ];
-        session()->set($ses_data);
+
+        $this->setUserSession($ses_data);
         if ($data['role'] == 'admin') {
           return redirect()->to('/admin');
         } else {
@@ -114,5 +108,27 @@ class UserController extends BaseController
       session()->setFlashdata('pesan', 'Username tidak terdaftar.');
       return redirect()->to('/login');
     }
+  }
+
+  private function setUserSession($user)
+  {
+    $data = [
+      'id' => $user['id'],
+      'name' => $user['name'],
+      'username' => $user['username'],
+      'email' => $user['email'],
+      'isLoggedIn' => true,
+      "role" => $user['role'],
+    ];
+    // dd($data);
+    session()->set($data);
+    return true;
+  }
+
+
+  public function logout()
+  {
+    session()->destroy();
+    return redirect()->to('/login');
   }
 }
