@@ -9,12 +9,6 @@ class MovieModel extends Model
   protected $table = 'movie';
   protected $primaryKey = 'id';
   protected $allowedFields = ['title', 'genre', 'release_date', 'duration', 'synopsis', 'poster', 'rating'];
-  protected $returnType = 'App\Entities\Movie';
-  protected $useTimestamps = true;
-  protected $useSoftDeletes = true;
-  protected $createdField = 'created_at';
-  protected $updatedField = 'updated_at';
-  protected $deletedField = 'deleted_at';
 
   public function getMovie($id = false)
   {

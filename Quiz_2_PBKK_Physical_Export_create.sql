@@ -4,7 +4,7 @@
 -- tables
 -- Table: cinema
 CREATE TABLE cinema (
-    id int  NOT NULL,
+    id int  NOT NULL AUTO_INCREMENT,
     name varchar(50)  NOT NULL,
     address varchar(100)  NOT NULL,
     capacity int  NOT NULL,
@@ -14,7 +14,7 @@ CREATE TABLE cinema (
 
 -- Table: movie
 CREATE TABLE movie (
-    id int  NOT NULL,
+    id int  NOT NULL AUTO_INCREMENT,
     title varchar(100)  NOT NULL,
     genre varchar(100)  NOT NULL,
     release_date date  NOT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE movie_cinema (
 
 -- Table: ticket
 CREATE TABLE ticket (
-    id int  NOT NULL,
+    id int  NOT NULL AUTO_INCREMENT,
     seat int  NOT NULL,
     price int  NOT NULL,
     movie_id int  NOT NULL,
@@ -46,7 +46,7 @@ CREATE TABLE ticket (
 
 -- Table: transaction
 CREATE TABLE transaction (
-    id int  NOT NULL,
+    id int  NOT NULL AUTO_INCREMENT,
     method varchar(50)  NOT NULL,
     email varchar(100)  NOT NULL,
     cardholder varchar(100)  NOT NULL,
@@ -62,7 +62,7 @@ CREATE TABLE transaction (
 
 -- Table: user
 CREATE TABLE user (
-    id int  NOT NULL,
+    id int  NOT NULL AUTO_INCREMENT,
     name varchar(100)  NOT NULL,
     username varchar(100)  NOT NULL,
     password varchar(100)  NOT NULL,

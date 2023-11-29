@@ -9,12 +9,6 @@ class CinemaModel extends Model
   protected $table = 'cinema';
   protected $primaryKey = 'id';
   protected $allowedFields = ['name', 'address', 'capacity', 'price'];
-  protected $returnType = 'App\Entities\Cinema';
-  protected $useTimestamps = true;
-  protected $useSoftDeletes = true;
-  protected $createdField = 'created_at';
-  protected $updatedField = 'updated_at';
-  protected $deletedField = 'deleted_at';
 
   public function getCinema($id = false)
   {

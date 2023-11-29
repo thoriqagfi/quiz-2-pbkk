@@ -9,12 +9,6 @@ class MovieCinemaModel extends Model
   protected $table = 'movie_cinema';
   protected $primaryKey = 'id';
   protected $allowedFields = ['movie_id', 'cinema_id', 'showtime'];
-  protected $returnType = 'App\Entities\MovieCinema';
-  protected $useTimestamps = true;
-  protected $useSoftDeletes = true;
-  protected $createdField = 'created_at';
-  protected $updatedField = 'updated_at';
-  protected $deletedField = 'deleted_at';
 
   public function getMovieCinema($id = false)
   {
